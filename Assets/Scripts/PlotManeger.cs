@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlotManeger : MonoBehaviour
 {
     bool isPlanted = false;
-    public SpriteRenderer plant;
+    SpriteRenderer plant;
+    BoxCollider2D plantCollider;
 
     public Sprite[] plantStages;
     int plantStage = 0;
@@ -15,7 +16,8 @@ public class PlotManeger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame

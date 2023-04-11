@@ -15,7 +15,7 @@ namespace WorldTime
         private TimeSpan currentTime;
 
         public const int MinuteInDay = 1440;
-        public float minuteLength => dayLenght / MinuteInDay;
+        private float minuteLength => dayLenght / MinuteInDay;
 
         private void Start()
         {
@@ -31,4 +31,5 @@ namespace WorldTime
         }
 
     }
+
 }
