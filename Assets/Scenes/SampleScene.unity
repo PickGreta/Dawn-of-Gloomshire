@@ -215,8 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431fd02e753909747a96efd7769aa0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nightTime: 0
+  endOfDay: 0
   dayLenght: 60
+  currentDay: 0
 --- !u!4 &110180017
 Transform:
   m_ObjectHideFlags: 0
@@ -4953,6 +4954,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9208564272103340076, guid: 7d8c8466c05f44146802f38e19f5bfad, type: 3}
   m_PrefabInstance: {fileID: 1078790820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &938597976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4093139789415122731, guid: d7cfbfc37bf8eb24f951f4e2b9521065, type: 3}
+  m_PrefabInstance: {fileID: 3844607184910464757}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1078790820
 PrefabInstance:
@@ -98634,6 +98640,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3301228414558592379, guid: d7cfbfc37bf8eb24f951f4e2b9521065, type: 3}
   m_PrefabInstance: {fileID: 3844607184910464757}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1768393057938467727 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1276855976005919625, guid: d7cfbfc37bf8eb24f951f4e2b9521065, type: 3}
+  m_PrefabInstance: {fileID: 3844607184910464757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1768393057938467730 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2344284949509531483, guid: d7cfbfc37bf8eb24f951f4e2b9521065, type: 3}
+  m_PrefabInstance: {fileID: 3844607184910464757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1768393057938467733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938597976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faacb01ff8731fb44b38d80ca50f49af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  collisionOffset: 0.05
+  rb: {fileID: 1768393057938467730}
+  animator: {fileID: 1768393057938467727}
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1001 &3844607184910464757
 PrefabInstance:
   m_ObjectHideFlags: 0

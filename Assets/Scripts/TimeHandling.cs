@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace WorldTime
 {
+    public enum Season { Spring, Summer, Fall, Winter}
+
     public class TimeHandling : MonoBehaviour
     {
         public bool endOfDay = false;
@@ -13,7 +15,10 @@ namespace WorldTime
         [SerializeField]
         private float dayLenght;
 
-        private TimeSpan currentTime;
+        [SerializeField]
+        private Season currentSeason;
+
+        private TimeSpan currentTime = TimeSpan.FromHours(6);
         public int currentDay;
 
         public const int MinuteInDay = 1440;
@@ -30,7 +35,7 @@ namespace WorldTime
             {
                 if (currentTime > TimeSpan.FromHours(6))
                 {
-                    currentDay++;
+                    AddDay();
                 }
                 
                 currentTime = TimeSpan.FromHours(6);
@@ -43,7 +48,7 @@ namespace WorldTime
             if (currentTime.TotalMinutes >= MinuteInDay)
             {
                 currentTime = TimeSpan.Zero;
-                currentDay++;
+                AddDay();
             }
 
             Debug.Log(currentTime);
@@ -51,6 +56,22 @@ namespace WorldTime
 
             yield return new WaitForSeconds(minuteLength);
             StartCoroutine(AddMinute());
+        }
+
+        private void AddDay()
+        {
+            currentDay++;
+            CheckSeason();
+
+        }
+
+        private void CheckSeason()
+        {
+            int dayOfYear = currentTime.Days % 112; // 1 season 4 weeks
+            if (dayOfYear < 28) currentSeason = Season.Spring;
+            else if (dayOfYear < 56) currentSeason = Season.Summer;
+            else if (dayOfYear < 84) currentSeason = Season.Fall;
+            else currentSeason = Season.Winter;
         }
 
     }
