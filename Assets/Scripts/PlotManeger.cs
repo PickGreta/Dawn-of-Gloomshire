@@ -11,6 +11,8 @@ public class PlotManeger : MonoBehaviour
     int plantStage = 0;
     int lastCheckedDay = 0;
 
+    bool rightSeason = true;
+
     public PlantObject selectedPlant;
 
     [SerializeField]
@@ -24,20 +26,24 @@ public class PlotManeger : MonoBehaviour
 
     void Update()
     {
-        if (isPlanted)
+        if (!isPlanted)
         {
-            if (lastCheckedDay < timeHandling.currentDay)
-            {
-                if (plantStage < selectedPlant.plantStages.Length-1)
-                {
-                    plantStage++;
-                    UpdatePlant();
-                }
-                
-                lastCheckedDay = timeHandling.currentDay;
-            }
-            
+            return;
         }
+
+        var isRightSeason = RightSeason();
+        if (!isRightSeason)
+        {
+            return;
+        }
+
+        if (lastCheckedDay < timeHandling.currentDay)
+        {
+            GrowingPlant();
+
+            lastCheckedDay = timeHandling.currentDay;
+        }
+        
     }
 
     private void OnMouseDown()
@@ -52,7 +58,7 @@ public class PlotManeger : MonoBehaviour
         else
         {
             Plant();
-            timeHandling.currentDay = lastCheckedDay;
+            //timeHandling.currentDay = lastCheckedDay;
         }
     }
 
@@ -64,10 +70,14 @@ public class PlotManeger : MonoBehaviour
 
     void Plant()
     {
-        isPlanted = true;
-        plantStage = 0;
-        UpdatePlant();
-        plant.gameObject.SetActive(true);
+        var isRightSeason = RightSeason();
+        if (isRightSeason)
+        {
+            isPlanted = true;
+            plantStage = 0;
+            UpdatePlant();
+            plant.gameObject.SetActive(true);
+        }
     }
 
     void UpdatePlant()
@@ -75,5 +85,26 @@ public class PlotManeger : MonoBehaviour
         plant.sprite = selectedPlant.plantStages[plantStage];
     }
 
+    void GrowingPlant()
+    {
+        if (plantStage < selectedPlant.plantStages.Length-1)
+        {
+            plantStage++;
+            UpdatePlant();
+        }
+    }
+    
+
+    bool RightSeason()
+    {
+        if (selectedPlant.seasonNeeded == timeHandling.currentSeason)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     
 }

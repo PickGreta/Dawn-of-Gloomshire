@@ -16,7 +16,7 @@ namespace WorldTime
         private float dayLenght;
 
         [SerializeField]
-        private Season currentSeason;
+        public Season currentSeason;
 
         private TimeSpan currentTime = TimeSpan.FromHours(6);
         public int currentDay;
