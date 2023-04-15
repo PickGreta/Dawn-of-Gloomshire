@@ -67,7 +67,7 @@ namespace WorldTime
 
         private void CheckSeason()
         {
-            int dayOfYear = currentTime.Days % 112; // 1 season 4 weeks
+            int dayOfYear = currentDay % 112; // 1 season 4 weeks
             if (dayOfYear < 28) currentSeason = Season.Spring;
             else if (dayOfYear < 56) currentSeason = Season.Summer;
             else if (dayOfYear < 84) currentSeason = Season.Fall;
