@@ -8,31 +8,35 @@ public class PlotManeger : MonoBehaviour
     SpriteRenderer plant;
     BoxCollider2D plantCollider;
 
-    public Sprite[] plantStages;
     int plantStage = 0;
-    float timeBtwStages = 2f;
-    float timer;
+    int lastCheckedDay = 0;
 
-    // Start is called before the first frame update
+    public PlantObject selectedPlant;
+
+    [SerializeField]
+    private WorldTime.TimeHandling timeHandling;
+
     void Start()
     {
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isPlanted)
         {
-            timer -= Time.deltaTime;
-
-            if (timer < 0 && plantStage < plantStages.Length-1)
+            if (lastCheckedDay < timeHandling.currentDay)
             {
-                timer = timeBtwStages;
-                plantStage++;
-                UpdatePlant();
+                if (plantStage < selectedPlant.plantStages.Length-1)
+                {
+                    plantStage++;
+                    UpdatePlant();
+                }
+                
+                lastCheckedDay = timeHandling.currentDay;
             }
+            
         }
     }
 
@@ -40,7 +44,7 @@ public class PlotManeger : MonoBehaviour
     {
         if(isPlanted)
         {
-            if (plantStage == plantStages.Length-1)
+            if (plantStage == selectedPlant.plantStages.Length-1)
             {
                 Harvest();
             }
@@ -48,6 +52,7 @@ public class PlotManeger : MonoBehaviour
         else
         {
             Plant();
+            timeHandling.currentDay = lastCheckedDay;
         }
     }
 
@@ -62,12 +67,13 @@ public class PlotManeger : MonoBehaviour
         isPlanted = true;
         plantStage = 0;
         UpdatePlant();
-        timer = timeBtwStages;
         plant.gameObject.SetActive(true);
     }
 
     void UpdatePlant()
     {
-        plant.sprite = plantStages[plantStage];
+        plant.sprite = selectedPlant.plantStages[plantStage];
     }
+
+    
 }
