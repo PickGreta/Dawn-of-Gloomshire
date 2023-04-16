@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: -117745737, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
   - {fileID: -2107040795, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
   timeBtwStages: 2
+  seasonNeeded: 0

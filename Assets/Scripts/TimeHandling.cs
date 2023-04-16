@@ -62,7 +62,6 @@ namespace WorldTime
         {
             currentDay++;
             CheckSeason();
-
         }
 
         private void CheckSeason()
