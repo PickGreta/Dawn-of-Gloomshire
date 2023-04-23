@@ -28,5 +28,5 @@ public class Collectable : MonoBehaviour
 
 public enum CollectableType
 {
-    NONE, SEED
+    NONE, TOMATOSEED, CORNSEED
 }

@@ -20,3 +20,5 @@ MonoBehaviour:
   - {fileID: -2107040795, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
   timeBtwStages: 2
   seasonNeeded: 0
+  price: 10
+  icon: {fileID: 1522394494, guid: c7025558cef2d9f468471c6ef512700a, type: 3}

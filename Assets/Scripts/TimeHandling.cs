@@ -19,7 +19,7 @@ namespace WorldTime
         public Season currentSeason;
 
         private TimeSpan currentTime = TimeSpan.FromHours(6);
-        public int currentDay;
+        public int currentDay = 1;
 
         public const int MinuteInDay = 1440;
         private float minuteLength => dayLenght / MinuteInDay;
@@ -51,8 +51,8 @@ namespace WorldTime
                 AddDay();
             }
 
-            Debug.Log(currentTime);
-            Debug.Log(currentDay);
+            //Debug.Log(currentTime);
+            //Debug.Log(currentDay);
 
             yield return new WaitForSeconds(minuteLength);
             StartCoroutine(AddMinute());

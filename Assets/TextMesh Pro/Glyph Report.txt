@@ -1,0 +1,21 @@
+Font: Timmy  Style: Regular
+Point Size: 50   Padding: -1073741824   SP/PD Ratio: -2147484000,0%
+
+Characters included: 90/99
+Missing characters: 9
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 36	Hex: 24	Char [$]
+ID: 45	Hex: 2D	Char [-]
+ID: 91	Hex: 5B	Char [[]
+ID: 93	Hex: 5D	Char []]
+ID: 123	Hex: 7B	Char [{]
+ID: 125	Hex: 7D	Char [}]
+ID: 160	Hex: A0	Char [ ]
+ID: 8203	Hex: 200B	Char [​]
+ID: 9633	Hex: 25A1	Char [□]
+
+Characters excluded from packing:
+----------------------------------------
