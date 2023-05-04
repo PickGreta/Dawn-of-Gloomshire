@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         inventoryPanel.SetActive(false);
+        SetupSlots();
         Refresh();
     }
 
@@ -68,7 +69,7 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                if (player.inventory.slots[i].type != CollectableType.NONE)
+                if (player.inventory.slots[i].itemName != "")
                 {
                     slots[i].SetItem(player.inventory.slots[i]);
                 }
@@ -82,7 +83,7 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                if (player.toolbar.slots[i].type != CollectableType.NONE)
+                if (player.toolbar.slots[i].itemName != "")
                 {
                     slots[i].SetItem(player.toolbar.slots[i]);
                 }
@@ -96,7 +97,7 @@ public class InventoryUI : MonoBehaviour
 
     public void Remove()
     {
-        Collectable itemToDrop = GameManager.instance.itemManager.GetItemByType(player.inventory.slots[draggedSlot.slotID].type);
+        Item itemToDrop = GameManager.instance.itemManager.GetItemByName(player.inventory.slots[draggedSlot.slotID].itemName);
         
         if (itemToDrop != null)
         {
@@ -146,7 +147,8 @@ public class InventoryUI : MonoBehaviour
 
     public void SlotDrop(SlotUI slot)
     {
-        Debug.Log("Dropped " + draggedSlot.name + " on " + slot.name);
+       player.inventory.MoveSlot(draggedSlot.slotID, slot.slotID);
+       Refresh();
     }
 
     private void MoveToMousePosition(GameObject toMove)
@@ -158,6 +160,17 @@ public class InventoryUI : MonoBehaviour
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, null, out position);
 
             toMove.transform.position = canvas.transform.TransformPoint(position);
+        }
+    }
+
+    void SetupSlots()
+    {
+        int counter = 0;
+
+        foreach (SlotUI slot in slots)
+        {
+            slot.slotID = counter;
+            counter++;
         }
     }
 }

@@ -13,17 +13,17 @@ public class Player : MonoBehaviour
         toolbar = new Inventory(4);
     }
 
-    public void DropItem(Collectable item)
+    public void DropItem(Item item)
     {
         Vector3 spawnLocation = transform.position;
 
         Vector3 spawnOffset = Random.insideUnitCircle * .25f;
 
-        Collectable droppedItem = Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
+        Item droppedItem = Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
 
     }
 
-    public void DropItem(Collectable item, int numToDrop)
+    public void DropItem(Item item, int numToDrop)
     {
         for (int i = 0; i < numToDrop; i++)
         {

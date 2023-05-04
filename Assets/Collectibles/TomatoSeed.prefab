@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4520725379560724977}
   - component: {fileID: 6911224179346532280}
   - component: {fileID: 4520725379560724990}
+  - component: {fileID: 2475695000104367083}
   m_Layer: 0
   m_Name: TomatoSeed
   m_TagString: Untagged
@@ -146,6 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8b572723c83c040bd5bffafa8b006c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  icon: {fileID: 1757407829, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
+--- !u!114 &2475695000104367083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4520725379560724991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ae2f3e22432ad4ab30b9a506506ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 88525ae6cc6c6f84e9f7c72ee267c175, type: 2}
   rb2d: {fileID: 0}
