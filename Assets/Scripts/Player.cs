@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Inventory inventory;
-    public Inventory toolbar;
+    public InventoryManager inventory;
     
     private void Awake()
     {
-        inventory = new Inventory(16);
-        toolbar = new Inventory(4);
+        inventory = GetComponent<InventoryManager>();
     }
 
     public void DropItem(Item item)

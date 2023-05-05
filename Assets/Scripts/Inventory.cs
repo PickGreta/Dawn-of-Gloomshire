@@ -122,15 +122,19 @@ public class Inventory
         }
    }
 
-   public void MoveSlot(int fromIndex, int toIndex)
+   public void MoveSlot(int fromIndex, int toIndex, Inventory toInventory, int numToMove = 1)
    {
         Slot fromSlot = slots[fromIndex];
-        Slot toSlot = slots[toIndex];
+        Slot toSlot = toInventory.slots[toIndex];
 
         if (toSlot.isEmpty || toSlot.CanAddItem(fromSlot.itemName))
         {
-            toSlot.AddItem(fromSlot.itemName, fromSlot.icon, fromSlot.maxAllowed);
-            fromSlot.RemoveItem();
+            for (int i = 0; i < numToMove; i++)
+            {
+                toSlot.AddItem(fromSlot.itemName, fromSlot.icon, fromSlot.maxAllowed);
+                fromSlot.RemoveItem();
+            }
+            
         }
    }
 }
