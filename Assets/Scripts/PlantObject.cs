@@ -7,9 +7,14 @@ using WorldTime;
 public class PlantObject : ScriptableObject
 {
     public string plantName;
+    
     public Sprite[] plantStages;
     public float timeBtwStages;
     public Season seasonNeeded;
     public int price;
     public Sprite icon;
+    public Item seed;
+    public Item crop;
+    public bool showWateredTile = false;
+
 }

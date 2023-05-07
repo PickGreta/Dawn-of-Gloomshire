@@ -6,14 +6,17 @@ public class PlotManeger : MonoBehaviour
 {
     bool isPlanted = false;
     SpriteRenderer plant;
+    SpriteRenderer wateredTile;
     BoxCollider2D plantCollider;
 
     int plantStage = 0;
     int lastCheckedDay = 0;
 
     bool rightSeason = true;
+    bool isWatered = false;
 
     public PlantObject selectedPlant;
+    public ToolbarUI toolbarUI;
 
     [SerializeField]
     private WorldTime.TimeHandling timeHandling;
@@ -21,7 +24,10 @@ public class PlotManeger : MonoBehaviour
     void Start()
     {
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        wateredTile = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        wateredTile.gameObject.SetActive(false);
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        toolbarUI = FindObjectOfType<ToolbarUI>();
     }
 
     void Update()
@@ -60,23 +66,34 @@ public class PlotManeger : MonoBehaviour
             Plant();
             //timeHandling.currentDay = lastCheckedDay;
         }
+
+        var hasWateringCan = HasWateringCan();
+        if (hasWateringCan)
+        {
+            WaterPlant();
+        }
     }
 
     void Harvest()
     {
+        DropItem(selectedPlant.crop);
         isPlanted = false;
         plant.gameObject.SetActive(false);
     }
 
     void Plant()
     {
-        var isRightSeason = RightSeason();
-        if (isRightSeason)
+        if (toolbarUI.selectedSlot.inventory.SelectSlot(toolbarUI.selectedSlot.slotID).itemName == selectedPlant.seed.data.itemName)
         {
-            isPlanted = true;
-            plantStage = 0;
-            UpdatePlant();
-            plant.gameObject.SetActive(true);
+            var isRightSeason = RightSeason();
+            if (isRightSeason)
+            {
+                isPlanted = true;
+                plantStage = 0;
+                UpdatePlant();
+                plant.gameObject.SetActive(true);
+                toolbarUI.selectedSlot.inventory.SelectSlot(toolbarUI.selectedSlot.slotID).RemoveItem();
+            }
         }
     }
 
@@ -87,10 +104,16 @@ public class PlotManeger : MonoBehaviour
 
     void GrowingPlant()
     {
-        if (plantStage < selectedPlant.plantStages.Length-1)
+
+        if (isWatered)
         {
-            plantStage++;
-            UpdatePlant();
+            if (plantStage < selectedPlant.plantStages.Length-1)
+            {
+                plantStage++;
+                UpdatePlant();
+                isWatered = false;
+                wateredTile.gameObject.SetActive(false);
+            }
         }
     }
     
@@ -106,5 +129,33 @@ public class PlotManeger : MonoBehaviour
             return false;
         }
     }
-    
+
+    bool HasWateringCan()
+    {
+        if (toolbarUI.selectedSlot.inventory.SelectSlot(toolbarUI.selectedSlot.slotID).itemName == "Watering Can")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void WaterPlant()
+    {
+        wateredTile.gameObject.SetActive(true);
+        isWatered = true;
+    }
+
+    public void DropItem(Item item)
+    {
+        Vector3 spawnLocation = transform.position;
+
+        Vector3 spawnOffset = Random.insideUnitCircle * .25f;
+
+        Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
+
+    }
+
 }

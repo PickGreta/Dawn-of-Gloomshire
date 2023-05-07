@@ -7,7 +7,7 @@ public class ToolbarUI : MonoBehaviour
     [SerializeField]
     private List<SlotUI> toolbarSlots = new List<SlotUI>();
 
-    private SlotUI selectedSlot;
+    public SlotUI selectedSlot;
 
     private void Start()
     {

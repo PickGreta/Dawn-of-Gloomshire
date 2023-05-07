@@ -137,4 +137,10 @@ public class Inventory
             
         }
    }
+
+   public Slot SelectSlot(int index)
+   {
+        var slot = slots[index];
+        return slot;
+   }
 }

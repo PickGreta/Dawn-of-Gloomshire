@@ -9,6 +9,7 @@ public class SlotUI : MonoBehaviour
     public int slotID;
     public Inventory inventory;
     public Image itemIcon;
+    public string itemName;
     public TextMeshProUGUI quantityText;
 
     [SerializeField]
