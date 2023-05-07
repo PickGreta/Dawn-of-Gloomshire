@@ -122,6 +122,17 @@ public class Inventory
         }
    }
 
+   public void Remove(Item item)
+   {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == item.data.itemName)
+            {
+                slot.RemoveItem();
+            }
+        }
+   }
+
    public void MoveSlot(int fromIndex, int toIndex, Inventory toInventory, int numToMove = 1)
    {
         Slot fromSlot = slots[fromIndex];
@@ -142,5 +153,17 @@ public class Inventory
    {
         var slot = slots[index];
         return slot;
+   }
+
+   public bool CanRemoveItem(Item item)
+   {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == item.data.itemName)
+            {
+                return true;
+            }
+        }
+        return false;
    }
 }

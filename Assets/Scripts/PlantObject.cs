@@ -12,6 +12,7 @@ public class PlantObject : ScriptableObject
     public float timeBtwStages;
     public Season seasonNeeded;
     public int price;
+    public int cropPrice;
     public Sprite icon;
     public Item seed;
     public Item crop;

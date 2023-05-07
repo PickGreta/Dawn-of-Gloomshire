@@ -40,4 +40,15 @@ public class InventoryManager : MonoBehaviour
 
         return null;
     }
+
+    public void Remove(string inventoryName, Item item)
+    {
+        inventoryByName[inventoryName].Remove(item);
+    }
+
+    public bool CanRemoveItem(string inventoryName, Item item)
+    {   
+        var inventory = inventoryByName[inventoryName];
+        return inventory.CanRemoveItem(item);
+    }
 }

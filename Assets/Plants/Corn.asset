@@ -21,6 +21,7 @@ MonoBehaviour:
   timeBtwStages: 5
   seasonNeeded: 1
   price: 20
+  cropPrice: 40
   icon: {fileID: -140612204, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
   seed: {fileID: -7418898982888000702, guid: 9ef6b765ad2184b4b8125a4c4e9bd1f1, type: 3}
   crop: {fileID: 9021501339584694717, guid: 179feed54fb2d0c42985245710864a27, type: 3}

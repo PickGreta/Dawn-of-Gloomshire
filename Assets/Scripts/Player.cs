@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
         inventory = GetComponent<InventoryManager>();
     }
 
+    private void Start()
+    {
+        gold = 100;
+    }
+
     public void DropItem(Item item)
     {
         Vector3 spawnLocation = transform.position;
