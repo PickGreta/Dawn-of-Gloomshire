@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
+
     [System.Serializable]
    public class Slot
    {
@@ -166,4 +167,17 @@ public class Inventory
         }
         return false;
    }
+
+    public bool IsThereEnoughItem(Item item, int requiredAmount)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == item.data.itemName && slot.count >= requiredAmount)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

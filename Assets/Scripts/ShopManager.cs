@@ -7,13 +7,9 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
     public PlantObject plant;
-    
     public Player player;
-
     public InventoryManager inventoryManager;
-    
     public ShopOpen shopOpen;
-
     public GameObject store;
 
     public TextMeshProUGUI nameText;

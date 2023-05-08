@@ -131,4 +131,5 @@ public class InventoryUI : MonoBehaviour
             slot.inventory = inventory;
         }
     }
+
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public InventoryManager inventory;
-
     public int gold;
+
+    public InventoryManager inventory;
+    public Quest quest;
     
     private void Awake()
     {
