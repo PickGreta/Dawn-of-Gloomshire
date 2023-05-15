@@ -36,19 +36,17 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
-        state = BattleState.START;
-        StartCoroutine(SetupBattle());
-
         GameObject endBattleButton = GameObject.Find("EndBattleButton");
         endBattleButton.SetActive(false);
 
         GameObject battleScene = GameObject.Find("BattleScene");
         battleScene.SetActive(false);
-
     }
 
-    IEnumerator SetupBattle()
+    public void SetupBattle()
     {
+        state = BattleState.START;
+
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
@@ -58,9 +56,11 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = enemyUnit.unitName + " is attacking";
 
         playerHUD.SetHUD(playerUnit);
+        Debug.Log("playerHUD");
         enemyHUD.SetHUD(enemyUnit);
+        Debug.Log("EnemyHUD"); 
 
-        yield return new WaitForSeconds(3f);
+        Debug.Log("waiting1");
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
@@ -116,10 +116,12 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            EndBattleScene();
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated";
+            EndBattleScene();
         }
 
         GameObject attackButton = GameObject.Find("AttackButton");

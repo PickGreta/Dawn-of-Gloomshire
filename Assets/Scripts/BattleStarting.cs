@@ -15,6 +15,7 @@ public class BattleStarting : MonoBehaviour
 
         BattleSystem battleScene = battleSystemObject.GetComponent<BattleSystem>();
         battleScene.MoveCameraToNewPosition();
+        battleScene.SetupBattle(); 
     }
 
 }
