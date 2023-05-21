@@ -61,4 +61,13 @@ public class QuestGiver : MonoBehaviour
         }   
     }
 
+    public void CompletedKillingQuest()
+    {
+        if (player.enemiesKilled == quest.goal.requiredAmount)
+        {
+            player.gold += quest.goldReward;
+            player.enemiesKilled = 0;
+        }
+    }
+
 }

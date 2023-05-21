@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int gold;
-
+    public int enemiesKilled = 0;
     public InventoryManager inventory;
+    public BattleSystem battleSystem;
     public Quest quest;
     
     private void Awake()
@@ -36,5 +37,10 @@ public class Player : MonoBehaviour
             DropItem(item);
         }
 
+    }
+
+    public void EnemiesKilled()
+    {
+        enemiesKilled++;
     }
 }

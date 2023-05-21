@@ -9,6 +9,8 @@ namespace WorldTime
 
     public class TimeHandling : MonoBehaviour
     {
+        public EnemySpawner enemySpawner;
+
         public bool endOfDay = false;
         public event EventHandler<TimeSpan> WorldTimeChanged;
 
@@ -35,7 +37,9 @@ namespace WorldTime
             {
                 if (currentTime > TimeSpan.FromHours(6))
                 {
+                    enemySpawner.DestroySpawnedEnemies();
                     AddDay();
+                    enemySpawner.SpawnEnemies();
                 }
                 
                 currentTime = TimeSpan.FromHours(6);

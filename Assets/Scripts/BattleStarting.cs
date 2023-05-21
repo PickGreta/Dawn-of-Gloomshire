@@ -9,13 +9,16 @@ public class BattleStarting : MonoBehaviour
 
     private void OnMouseDown()
     {
-        battleSceneObject.SetActive(true);
-
+        var gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
+        gameManager.SetBattleSceneActive();
+        
         GameObject battleSystemObject = GameObject.Find("BattleSystem");
 
-        BattleSystem battleScene = battleSystemObject.GetComponent<BattleSystem>();
-        battleScene.MoveCameraToNewPosition();
-        battleScene.SetupBattle(); 
+        BattleSystem battleSystem = battleSystemObject.GetComponent<BattleSystem>();
+        battleSystem.MoveCameraToNewPosition();
+        battleSystem.SetupBattle(gameObject);
+        
     }
 
 }

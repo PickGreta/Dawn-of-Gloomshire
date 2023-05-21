@@ -16,21 +16,6 @@ public class QuestGoal
         return (currentAmount >= requiredAmount);
     }
 
-    public void EnemyKilled()
-    {
-        if (goalType == GoalType.Kill)
-        {
-            currentAmount++;
-        }
-    }
-
-    public void ItemCollected()
-    {
-        if (goalType == GoalType.Gather)
-        {
-            currentAmount++;
-        }
-    }
 }
 
 public enum GoalType

@@ -9,7 +9,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-    public Transform player;
+    public Player player;
 
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
@@ -33,6 +33,7 @@ public class BattleSystem : MonoBehaviour
 
     public CinemachineVirtualCamera vcam;
     
+    public GameObject enemyGO;
 
     void Start()
     {
@@ -43,14 +44,14 @@ public class BattleSystem : MonoBehaviour
         battleScene.SetActive(false);
     }
 
-    public void SetupBattle()
+    public void SetupBattle(GameObject enemyGO)
     {
         state = BattleState.START;
 
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyGO.transform.position = enemyBattleStation.transform.position;
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = enemyUnit.unitName + " is attacking";
@@ -78,6 +79,8 @@ public class BattleSystem : MonoBehaviour
         if (isDead)
         {
             state = BattleState.WON;
+            Destroy(enemyGO);
+            player.EnemiesKilled();
             EndBattle();
         }
         else
@@ -177,7 +180,7 @@ public class BattleSystem : MonoBehaviour
     {
         battleScene.SetActive(false);
 
-        vcam.Follow = player;
+        vcam.Follow = player.transform;
     }
 
     public void MoveCameraToNewPosition()

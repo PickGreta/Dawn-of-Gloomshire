@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public ItemManager itemManager;
     public UIManager uiManager;
     public Player player;
+    public GameObject battleScene;
 
     private void Awake()
     {
@@ -26,5 +27,10 @@ public class GameManager : MonoBehaviour
         uiManager = GetComponent<UIManager>();
 
         player = FindObjectOfType<Player>();
+    }
+
+    public void SetBattleSceneActive()
+    {
+        battleScene.SetActive(true);
     }
 }
