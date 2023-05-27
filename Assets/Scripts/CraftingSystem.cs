@@ -35,7 +35,6 @@ public class CraftingSystem : MonoBehaviour
 
     public void MakePotion()
     {
-        // vegigmegy az inventory toolbarjan, ha van material1 es material2, akkor berakja az itemet az inventoryba
         if (inventoryManager.GetInventoryByName("Toolbar").IsThereEnoughItem(material1, requiredAmount1) && inventoryManager.GetInventoryByName("Toolbar").IsThereEnoughItem(material2, requiredAmount2))
         {
             for(int i = 0; i < requiredAmount1; i++)

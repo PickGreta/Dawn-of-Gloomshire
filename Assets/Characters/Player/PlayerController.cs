@@ -13,16 +13,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -31,7 +24,6 @@ public class PlayerController : MonoBehaviour
         {
            bool success = TryMove(movementInput);
 
-            //Slide on collision objects
             if(!success)
             {
                 success = TryMove(new Vector2(movementInput.x, 0));
@@ -46,7 +38,6 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 direction)
     {
-        //Check for potential collision
         int count = rb.Cast(
                 direction,
                 movementFilter,
