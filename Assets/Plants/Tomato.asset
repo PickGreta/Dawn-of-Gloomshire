@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Tomato
   plantStages:
-  - {fileID: -516501301, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
-  - {fileID: -160798671, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
-  - {fileID: -117745737, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
-  - {fileID: -2107040795, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
+  - {fileID: -1794052160, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: 987966903, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: 2066855073, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: -2058882840, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
   timeBtwStages: 2
   seasonNeeded: 0
   price: 10
   cropPrice: 20
-  icon: {fileID: 1522394494, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
+  icon: {fileID: 269576422, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
   seed: {fileID: 2475695000104367083, guid: d823e2312d91dac4d866d6dcc2b40ca4, type: 3}
   crop: {fileID: 243672311708809446, guid: 552cf32b56fe2364ab3d1a4014e31b8a, type: 3}
   showWateredTile: 0

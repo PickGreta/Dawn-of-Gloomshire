@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CornSeeds
   m_EditorClassIdentifier: 
   itemName: Corn Seeds
-  icon: {fileID: -1954390260, guid: c7025558cef2d9f468471c6ef512700a, type: 3}
+  icon: {fileID: 520040449, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}

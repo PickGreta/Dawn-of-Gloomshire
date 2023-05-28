@@ -50,7 +50,7 @@ MonoBehaviour:
   unitName: Sad Ghost
   damage: 5
   maxHP: 200
-  currentHP: 80
+  currentHP: 200
 --- !u!61 &2915897463200160195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1030030446, guid: a6cb7d4b2a1046b4ca707be8dfcac0a3, type: 3}
+  m_Sprite: {fileID: -1254556536, guid: b992ca4d4cf7c7f4cbc8f55879be6e0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
