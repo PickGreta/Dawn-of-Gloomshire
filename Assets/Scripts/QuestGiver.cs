@@ -32,7 +32,7 @@ public class QuestGiver : MonoBehaviour
     {
         OpenQuestWindow();
     }
-
+ 
     public void AcceptQuest()
     {
         questWindow.SetActive(false);

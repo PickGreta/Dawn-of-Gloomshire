@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: 71fe3ef2a3feec341b1eba9b0312f0d2, type: 2}
   player: {fileID: 0}
-  inventory: {fileID: 0}
+  inventoryManager: {fileID: 0}
   shopOpen: {fileID: 0}
   store: {fileID: 0}
   nameText: {fileID: 2695773348774500439}
@@ -442,7 +442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 313.74347, y: 45.119934}
+  m_AnchoredPosition: {x: 400.80188, y: 9.44006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &2695773347971151988
@@ -789,7 +789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 304.62335, y: 81.60016}
+  m_AnchoredPosition: {x: 304.62335, y: 98.4006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &2695773348774500438
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -53.43785, y: 0, z: -14.843842, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 20358753, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
   - {fileID: -504395988, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
   - {fileID: 1095893529, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
-  timeBtwStages: 5
+  timeBtwStages: 1
   seasonNeeded: 1
   price: 20
   cropPrice: 40

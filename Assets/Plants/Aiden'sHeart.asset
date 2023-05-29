@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc0883b60966d94386e2151ae1852e7, type: 3}
+  m_Name: Aiden'sHeart
+  m_EditorClassIdentifier: 
+  plantName: Aiden's heart
+  plantStages:
+  - {fileID: -2097021147, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: 874642144, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: 1936312597, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  - {fileID: -1406894813, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  timeBtwStages: 1
+  seasonNeeded: 2
+  price: 50
+  cropPrice: 100
+  icon: {fileID: 1414256725, guid: 3a2f809107854d2438d09e260b860b5d, type: 3}
+  seed: {fileID: 8312371075165733806, guid: f8bdedadee6d34f43bf693ea2f14eaa9, type: 3}
+  crop: {fileID: 3565326387192577491, guid: edd5f69d3e5a48746a60681db772e0f1, type: 3}
+  showWateredTile: 0

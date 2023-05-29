@@ -155,7 +155,6 @@ public class PlotManeger : MonoBehaviour
         Vector3 spawnOffset = Random.insideUnitCircle * .25f;
 
         Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
-
     }
 
 }
